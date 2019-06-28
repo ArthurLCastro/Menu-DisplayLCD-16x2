@@ -9,13 +9,15 @@
 #define BUT_RIGHT 7         // Pino para botão de navegação para a direita
 #define BUZZER 10
 
+#define DEBUG
+
 LiquidCrystal_I2C lcd(0x3f, 2, 1, 0, 4, 5, 6, 7, 3, POSITIVE);
 
 int contador;
 
-String opcao[] = {"Opcao 0", "Opcao 1", "Opcao 2", "Opcao 3", "Opcao 4", "Opcao 5"};
-byte qtdOpcoes = 6, qtdTelas = 0, indexLcd = 0, resto = 0;
-bool sairMenu = 1, indexCursor = 0, atualizar = true;
+String opcao[] = {"Opcao 0", "Opcao 1", "Opcao 2", "Opcao 3", "Opcao 4", "Opcao 5", "Opcao 6"};
+byte qtdOpcoes = 7, qtdTelas = 0, indexLcd = 0, resto = 0;
+bool sairMenu = 0, indexCursor = 0, atualizar = true;
 
 void setup() {
   lcd.begin(16,2);
@@ -67,10 +69,12 @@ void telaMenu(){
       qtdTelas++;
   }
 
-  while(sairMenu){
+  while(!sairMenu){
     estadoBotoes();
     if(atualizar == true){
-      Serial.println("Atualizando Display");
+      #ifdef DEBUG
+        Serial.println("Atualizando Display");
+      #endif
       atualizaMenu();
       atualizar = false;
     }
@@ -78,7 +82,7 @@ void telaMenu(){
   }
 }
 
-bool estadoBotoes(){
+void estadoBotoes(){
   bool butL, butE, butR;
 
   butL = digitalRead(BUT_LEFT);
@@ -99,10 +103,10 @@ bool estadoBotoes(){
     subMenu(indexLcd);
   }
 
-  Serial.print("indexLcd: ");
-  Serial.println(indexLcd);
-  
-  return atualizar;
+  #ifdef DEBUG
+    Serial.print("indexLcd: ");
+    Serial.println(indexLcd);
+  #endif
 }
 
 void atualizaMenu(){
