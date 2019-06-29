@@ -3,15 +3,15 @@
 
 class MenuLcd{
     private:
-        byte qtdTelas = 0,
-             indexLcd = 0,
-             resto = 0;
-        bool sairMenu = 0,
-             indexCursor = 0,
-             atualizar = true;
+        byte qtdTelas = 0;
+        byte indexLcd = 0;
+        byte resto = 0;
+        bool sairMenu = 0;
+        bool indexCursor = 0;
+        bool atualizar = true;
 
     public:
-        MenuLcd();      //Construtor Padrão
+        MenuLcd();          //Construtor Padrão
         MenuLcd(byte, byte, byte);
         void setButton(byte, byte, byte);
         void apresentacaoMenu(String nomeMenu);
