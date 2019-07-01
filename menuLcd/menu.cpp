@@ -9,7 +9,7 @@ MenuLcd::MenuLcd(byte buttonLeft, byte buttonEnter, byte buttonRight){
     setButton(buttonLeft, buttonEnter, buttonRight);
 }
 
-void MenuLcd::setupMenu(LiquidCrystal_I2C& liquidI2C){
+void MenuLcd::setupMenu(LCD& liquidI2C){
   this->display = &liquidI2C;  
 }
 
@@ -24,7 +24,9 @@ void MenuLcd::setButton(byte butLeft, byte butEnter, byte butRight){
 }
 
 void MenuLcd::setOpcoes(byte nOpcoes, String opcoes[]){
-    opcaoLinhas[] = opcoes[];
+    for(byte i=0; i<nOpcoes; i++){
+      opcaoLinhas[i] = opcoes[i];
+    }
     qtdOpcoes = nOpcoes;
 
     qtdTelas = qtdOpcoes / 2;
@@ -85,7 +87,7 @@ void MenuLcd::atualizaMenu(){
       if((indexLcd == j) || (indexLcd == (j+1))){
         display->clear();
         display->setCursor(0,0);
-        display->print("  " + opcao[j]);
+        display->print("  " + opcaoLinhas[j]);
         display->setCursor(0,1);
         display->print("                ");
       }
@@ -93,9 +95,9 @@ void MenuLcd::atualizaMenu(){
       if((indexLcd == j) || (indexLcd == (j+1))){
         display->clear();
         display->setCursor(0,0);
-        display->print("  " + opcao[j]);
+        display->print("  " + opcaoLinhas[j]);
         display->setCursor(0,1);
-        display->print("  " + opcao[j+1]);
+        display->print("  " + opcaoLinhas[j+1]);
       }
     }
     j=j+2;
