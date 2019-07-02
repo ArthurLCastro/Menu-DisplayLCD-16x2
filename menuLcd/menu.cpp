@@ -10,7 +10,10 @@ MenuLcd::MenuLcd(byte buttonLeft, byte buttonEnter, byte buttonRight){
 }
 
 void MenuLcd::setupMenu(LCD& liquidI2C){
-  this->display = &liquidI2C;  
+  this->display = &liquidI2C;
+  display->createChar(1, setaDireita);
+  display->begin(16, 2);
+
 }
 
 void MenuLcd::setButton(byte butLeft, byte butEnter, byte butRight){
@@ -109,7 +112,7 @@ void MenuLcd::atualizaMenu(){
     indexCursor = 1;
   }
   display->setCursor(0, indexCursor);
-  display->print("> ");
+  display->write((byte)1);
   display->setCursor(0, !indexCursor);
   display->print("  ");
 }

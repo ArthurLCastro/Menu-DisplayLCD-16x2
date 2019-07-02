@@ -19,7 +19,17 @@ class MenuLcd{
         bool atualizar = true;
         void estadoBotoes();
         void atualizaMenu();
-
+        byte setaDireita[8] = {
+          0b00000,
+          0b00100,
+          0b00010,
+          0b11111,
+          0b00010,
+          0b00100,
+          0b00000,
+          0b00000
+        };
+ 
     public:
         MenuLcd();          //Construtor Padrão
         MenuLcd(byte, byte, byte);
