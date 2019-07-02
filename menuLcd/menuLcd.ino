@@ -96,13 +96,6 @@ void subMenu(byte escolhida){
             lcd.print("  Tela Opcao 6  ");
             delay(2000);
             break;
-        case 7:
-            // Você pode criar aqui um funcao como "telaopcao7();" para ser executada ou fazer como o exemplo abaixo: 
-            lcd.clear();
-            lcd.setCursor(0,0);
-            lcd.print("  Tela Opcao 7  ");
-            delay(2000);
-            break;
         // ...
         default:
             lcd.clear();
