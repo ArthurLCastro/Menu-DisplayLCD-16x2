@@ -31,6 +31,7 @@ class MenuLcd{
       0b00000
     };
     void beep(byte);
+    void beepEnter(byte);
 
   public:
     MenuLcd();          //Construtor Padrão

@@ -85,7 +85,7 @@ void MenuLcd::estadoBotoes(){
     indexLcd--;
   }
   if(estadoButE == LOW){
-    beep(buzzerPin);
+    beepEnter(buzzerPin);
     atualizar = true;
     sairMenu = true;
   }
@@ -130,8 +130,16 @@ void MenuLcd::atualizaMenu(){
   display->print("  ");
 }
 
-//void MenuLcd::beep(byte pinBuz){
 void MenuLcd::beep(byte pinBuz){
+  tone(pinBuz, 2000);
+  delay(50);
+  noTone(pinBuz);
+}
+
+void MenuLcd::beepEnter(byte pinBuz){
+  tone(pinBuz, 2000);
+  delay(50);
+  noTone(pinBuz);
   tone(pinBuz, 2000);
   delay(50);
   noTone(pinBuz);
