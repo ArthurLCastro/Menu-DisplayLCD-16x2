@@ -138,9 +138,9 @@ void MenuLcd::beep(byte pinBuz){
 
 void MenuLcd::beepEnter(byte pinBuz){
   tone(pinBuz, 2000);
-  delay(50);
+  delay(70);
   noTone(pinBuz);
-  tone(pinBuz, 2000);
-  delay(50);
+  tone(pinBuz, 1000);
+  delay(70);
   noTone(pinBuz);
 }
