@@ -1,6 +1,6 @@
 #include "menu.h"
 
-// #define DEBUG
+#define DEBUG
 
 MenuLcd::MenuLcd(){
 }
@@ -60,8 +60,9 @@ void MenuLcd::estadoBotoes(){
   estadoButL = digitalRead(botaoL);
   estadoButE = digitalRead(botaoE);
   estadoButR = digitalRead(botaoR);
+  while((!digitalRead(botaoL))||(!digitalRead(botaoR))||(!digitalRead(botaoE)));
   delay(50);
-
+  
   if((estadoButR == LOW) && (indexLcd < (qtdOpcoes-1))){
     atualizar = true;
     indexLcd++;
