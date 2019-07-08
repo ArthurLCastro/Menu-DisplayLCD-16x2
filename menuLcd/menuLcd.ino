@@ -9,8 +9,10 @@
 #define BUT_LEFT    6         // Pino para botão de navegação para a esquerda
 #define BUT_RIGHT   7         // Pino para botão de navegação para a direita
 
+#define BUZZER_PIN  3         // Pino para botão de selecao
+
 LiquidCrystal_I2C lcd(0x3F, 2, 1, 0, 4, 5, 6, 7, 3, POSITIVE);
-MenuLcd meuMenu1(BUT_LEFT, BUT_ENTER, BUT_RIGHT);
+MenuLcd meuMenu1(BUT_LEFT, BUT_ENTER, BUT_RIGHT, BUZZER_PIN);
 
 String definindoOpcoes[] = {"Opcao 0", "Opcao 1", "Opcao 2", "Opcao 3", "Sair"};
 byte quantidOpcoes = 5, opcaoSelecionada = 0;
