@@ -1,0 +1,14 @@
+#############################################
+# Mapa de colorização sintática para MenuLCD
+#############################################
+
+# Tipos de Dados (KEYWORD1)
+	MenuLcd	KEYWORD1
+
+# Métodos e Funções (KEYWORD2)
+	setOpcoes	KEYWORD2
+	setupMenu	KEYWORD2
+	setButton	KEYWORD2
+	setBuzzer	KEYWORD2
+	navegarMenu	KEYWORD2
+};

@@ -1,8 +1,8 @@
-// Exemplo de uso do Menu de navegação com Display LCD 16x2 e 3 pushbuttons
+// Menu de navegação com Display LCD 16x2 com Módulo I2C e 3 pushbuttons
 // Arthur L. Castro
 // Junho de 2019
 
-#include "menu.h"
+#include <MenuLcd.h>
 #include <LiquidCrystal_I2C.h>
 
 #define BUT_ENTER   2         // Pino para botão de selecao
