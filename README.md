@@ -16,6 +16,6 @@ A biblioteca _Menu_DisplayLCD_16x2_ utiliza a biblioteca [LCD library](https://b
 ### Menu com DisplayLCD 16x2
 -->
 <figure>
-    <img src="/Menu-DisplayLCD-16x2/hardware/exemploHardware.png" width="70%" alt="Menu com DisplayLCD 16x2">
+    <img src="/hardware/exemploHardware.png" width="70%" alt="Menu com DisplayLCD 16x2">
     <figcaption>Hardware 01 - Menu com DisplayLCD 16x2</figcaption>
 </figure>
